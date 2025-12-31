@@ -10,6 +10,7 @@ An interactive, feature-rich terminal-style resume built with modern web technol
 ## ✨ Features
 
 ### 🎯 Core Functionality
+
 - **15+ Interactive Commands** - Explore my resume through familiar terminal commands
 - **Tab Completion** - Smart autocomplete for commands, files, and arguments
 - **Command History** - Navigate previous commands with ↑/↓ arrows
@@ -17,18 +18,21 @@ An interactive, feature-rich terminal-style resume built with modern web technol
 - **Mobile Optimized** - Full touch support with virtual keyboard
 
 ### 🎨 Visual Features
+
 - **6 Themes** - CRT (default), Matrix, Hacker, Light, Dracula, and Nord
 - **CRT Effects** - Authentic terminal feel with scanlines and glow
 - **Smooth Animations** - Typing effects and transitions
 - **Responsive Design** - Works flawlessly on all screen sizes
 
 ### ♿ Accessibility
+
 - **Screen Reader Support** - ARIA labels and live regions
 - **Keyboard Navigation** - Full keyboard accessibility
 - **High Contrast Mode** - Respects system preferences
 - **Reduced Motion** - Honors prefers-reduced-motion
 
 ### 🚀 Advanced Features
+
 - **Download Resume** - Export as PDF or TXT
 - **Neofetch Display** - Nerdy system info showcase
 - **Easter Eggs** - Hidden surprises throughout
@@ -78,28 +82,32 @@ terminal-resume/
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js 18+ and npm
 
 ### Installation
 
 1. **Clone the repository**
+
 ```bash
 git clone https://github.com/yourusername/terminal-resume.git
 cd terminal-resume
 ```
 
 2. **Install dependencies**
+
 ```bash
 npm install
 ```
 
 3. **Start development server**
+
 ```bash
 npm run dev
 ```
 
 4. **Open in browser**
-Navigate to `http://localhost:5173`
+   Navigate to `http://localhost:5173`
 
 ### Building for Production
 
@@ -120,13 +128,15 @@ npm run preview
 1. **Update configuration**
 
 Edit `vite.config.js` - change `base` to your repository name:
+
 ```javascript
-base: '/your-repo-name/'
+base: "/your-repo-name/";
 ```
 
 2. **Update personal information**
 
 Edit `src/config/resume.js` with your:
+
 - Resume content
 - Contact details
 - Projects
@@ -136,16 +146,19 @@ Edit `src/config/resume.js` with your:
 3. **Update meta tags**
 
 Edit `index.html` with your:
+
 - Site title and description
 - Open Graph image URL
 - Social media URLs
 
 4. **Deploy**
+
 ```bash
 npm run deploy
 ```
 
 5. **Enable GitHub Pages**
+
 - Go to repository **Settings** → **Pages**
 - Source: **Deploy from branch**
 - Branch: **gh-pages** / root
@@ -155,26 +168,26 @@ Your site will be live at: `https://yourusername.github.io/your-repo-name/`
 
 ## 📖 Available Commands
 
-| Command | Description |
-|---------|-------------|
-| `help [command]` | Show available commands or detailed help |
-| `ls` | List files |
-| `cat <file>` | Display file contents |
-| `about` | Learn about me |
-| `contact` | View contact information |
-| `skills` | List technical and soft skills |
-| `projects [name]` | View projects (optionally specify one) |
-| `neofetch` | Display system information |
-| `whoami` | Show current user info |
-| `history` | View command history |
-| `download [pdf\|txt]` | Download resume |
-| `theme [name\|list]` | Change or list themes |
-| `fortune` | Random developer wisdom |
-| `date` | Show current date/time |
-| `echo <text>` | Print text |
-| `pwd` | Print working directory |
-| `clear` | Clear terminal screen |
-| `exit` | End session (shows stats) |
+| Command               | Description                              |
+| --------------------- | ---------------------------------------- |
+| `help [command]`      | Show available commands or detailed help |
+| `ls`                  | List files                               |
+| `cat <file>`          | Display file contents                    |
+| `about`               | Learn about me                           |
+| `contact`             | View contact information                 |
+| `skills`              | List technical and soft skills           |
+| `projects [name]`     | View projects (optionally specify one)   |
+| `neofetch`            | Display system information               |
+| `whoami`              | Show current user info                   |
+| `history`             | View command history                     |
+| `download [pdf\|txt]` | Download resume                          |
+| `theme [name\|list]`  | Change or list themes                    |
+| `fortune`             | Random developer wisdom                  |
+| `date`                | Show current date/time                   |
+| `echo <text>`         | Print text                               |
+| `pwd`                 | Print working directory                  |
+| `clear`               | Clear terminal screen                    |
+| `exit`                | End session (shows stats)                |
 
 ### Keyboard Shortcuts
 
@@ -201,6 +214,7 @@ Themes are automatically saved and restored on your next visit!
 ## 🎭 Easter Eggs
 
 Try these commands for fun surprises:
+
 - `sudo`, `rm -rf /`, `hack`
 - `matrix`, `portal`, `coffee`, `beer`
 - `vim`, `emacs`, `fortune`
@@ -225,6 +239,7 @@ Try these commands for fun surprises:
 ### Modifying Resume Content
 
 Edit `src/config/resume.js`:
+
 - `resumeText` - Main resume content
 - `neofetchData` - Personal info for neofetch
 - `contact` - Contact details
@@ -249,6 +264,7 @@ Edit `src/config/resume.js`:
 ## 🤝 Contributing
 
 Contributions are welcome! Feel free to:
+
 - Report bugs
 - Suggest new features
 - Submit pull requests
@@ -267,10 +283,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Contact
 
 **Tora Sifa**
+
 - Email: mochammadtora@gmail.com
 - LinkedIn: [linkedin.com/in/tora-sifa](https://linkedin.com/in/tora-sifa)
-- GitHub: [github.com/torasifa](https://github.com/torasifa)
-- Website: [torasifa.dev](https://torasifa.dev)
+- GitHub: [github.com/squishydal](https://github.com/squishydal)
 
 ---
 
