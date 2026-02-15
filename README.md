@@ -2,7 +2,7 @@
 
 An interactive, feature-rich terminal-style resume built with modern web technologies. This project showcases my skills and experience in a unique, engaging way that developers and tech enthusiasts will appreciate.
 
-[![Live Demo](https://img.shields.io/badge/demo-live-success)](https://yourusername.github.io/terminal-resume/)
+[![Live Demo](https://img.shields.io/badge/demo-live-success)](https://tora.is-a.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ![Terminal Resume Preview](preview.png)
