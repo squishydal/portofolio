@@ -21,7 +21,7 @@
 // ── Config ───────────────────────────────────────────────────
 
 // ⚠️  Replace this with your real backend URL before deploying
-const BACKEND_URL = 'ama-backend-production-a922.up.railway.app';
+const BACKEND_URL = 'https://ama-backend-production-a922.up.railway.app';
 
 
 // ── Modal: open ──────────────────────────────────────────────
