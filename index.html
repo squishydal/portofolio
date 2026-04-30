@@ -1,87 +1,438 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mochammad Tora Sifa — Backend Developer</title>
 
-    <!-- Primary Meta Tags -->
-    <title>
-      Tora Sifa - Interactive Terminal Resume | Full Stack Developer
-    </title>
-    <meta
-      name="title"
-      content="Tora Sifa - Interactive Terminal Resume | Full Stack Developer"
-    />
-    <meta
-      name="description"
-      content="Full Stack Developer specializing in Go, TypeScript, and backend systems. Interactive terminal-style resume with 15+ commands. Based in Bandung, Indonesia."
-    />
-    <meta
-      name="keywords"
-      content="Full Stack Developer, Go Developer, TypeScript, Backend Engineer, Bandung Developer, Software Engineer, Terminal Resume"
-    />
-    <meta name="author" content="Tora Sifa" />
-    <meta name="robots" content="index, follow" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content="https://squishydal.github.io/terminal-resume/"
-    />
-    <meta
-      property="og:title"
-      content="Tora Sifa - Interactive Terminal Resume"
-    />
-    <meta
-      property="og:description"
-      content="Full Stack Developer specializing in Go, TypeScript, and backend systems. Try my interactive terminal resume!"
-    />
-    <meta
-      property="og:image"
-      content="https://squishydal.github.io/terminal-resume/preview.png"
-    />
+  <!-- Stylesheets (order matters — base first, responsive last) -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta
-      property="twitter:url"
-      content="https://squishydal.github.io/terminal-resume/"
-    />
-    <meta
-      property="twitter:title"
-      content="Tora Sifa - Interactive Terminal Resume"
-    />
-    <meta
-      property="twitter:description"
-      content="Full Stack Developer specializing in Go, TypeScript, and backend systems."
-    />
-    <meta
-      property="twitter:image"
-      content="https://squishydal.github.io/terminal-resume/preview.png"
-    />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="alternate icon" href="/favicon.ico" />
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<nav>
+  <a href="#" class="nav-logo">Tora Sifa</a>
 
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#1a0f2e" />
+  <!-- Desktop links (hidden on mobile via CSS) -->
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#ama" class="nav-ama">AMA</a></li>
+    <li>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="toggle-thumb">
+          <span class="icon-sun">☀</span>
+          <span class="icon-moon">☾</span>
+        </span>
+      </button>
+    </li>
+  </ul>
 
-    <!-- Web App Manifest -->
-    <link rel="manifest" href="/manifest.json" />
+  <!-- Mobile: theme pill + hamburger (shown via CSS/JS on small screens) -->
+  <div style="display:flex; align-items:center; gap:0.8rem;">
+    <button class="theme-toggle" id="themeToggleMobile" aria-label="Toggle dark mode" style="display:none;">
+      <span class="toggle-thumb">
+        <span class="icon-sun">☀</span>
+        <span class="icon-moon">☾</span>
+      </span>
+    </button>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
 
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-  </head>
-  <body>
-    <div id="app">
-      <div
-        id="terminal"
-        role="application"
-        aria-label="Interactive terminal resume"
-      ></div>
+<!-- Mobile slide-down menu (toggled by nav.js) -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about"      onclick="closeMobileMenu()">About</a>
+  <a href="#experience" onclick="closeMobileMenu()">Experience</a>
+  <a href="#skills"     onclick="closeMobileMenu()">Skills</a>
+  <a href="#projects"   onclick="closeMobileMenu()">Projects</a>
+  <a href="#ama" class="nav-ama" onclick="closeMobileMenu(); openAMA(); return false;">AMA</a>
+</div>
+
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<div class="hero">
+  <p class="hero-label">Backend Developer · Bandung, Indonesia</p>
+
+  <h1>Mochammad<br>Tora Sifa</h1>
+
+  <div class="hero-meta">
+    <p class="hero-desc">
+      CS final year student specialising in backend development with Golang.
+      Experienced in building RESTful APIs, Linux environments, and secure
+      authentication systems.
+    </p>
+
+    <div class="hero-info">
+      <span>mochammadtora@gmail.com</span>
+      <a href="https://github.com/squishydal" target="_blank">github.com/squishydal</a>
+      <span>+62 851 7448 6638</span>
+      <a href="#ama" class="hero-ama-btn" onclick="openAMA(); return false;">
+        Ask me anything →
+      </a>
     </div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+  </div>
+
+  <span class="hero-scroll">Scroll to explore</span>
+</div>
+
+
+<!-- ============================================================
+     ABOUT
+     ============================================================ -->
+<section id="about">
+  <div class="about-grid">
+    <span class="section-label">About</span>
+    <div>
+      <p class="about-text">
+        Computer Science student with a foundation in software engineering
+        since vocational high school. I specialise in
+        <strong>backend development using Golang</strong>, with hands-on
+        experience building RESTful APIs, web scraping pipelines, and
+        full-stack applications.
+        <br><br>
+        My thesis focuses on designing <strong>JWT-based authentication</strong>
+        for Go APIs to actively prevent Man-in-the-Middle attacks — where
+        security meets systems design.
+        <br><br>
+        Highly proficient in <strong>Linux environments</strong>, I care about
+        writing clean, secure, and maintainable code.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     EXPERIENCE
+     ============================================================ -->
+<section id="experience">
+  <div class="section-header">
+    <span class="section-label">Experience</span>
+    <h2 class="section-title">Where I've<br>worked</h2>
+  </div>
+
+  <!-- Add more .exp-item blocks here for additional roles -->
+  <div class="exp-item">
+    <div class="exp-meta">
+      <span class="exp-date">Nov 2024 – Feb 2025</span>
+      <span class="exp-company">PT. Layanan Cerdas Indonesia</span>
+      <span class="exp-location">Bandung, Indonesia</span>
+    </div>
+    <div class="exp-content">
+      <p class="exp-role">Intern Fullstack Developer</p>
+      <ul class="exp-bullets">
+        <li>Built and maintained RESTful APIs using PHP and Laravel in a dedicated Linux environment</li>
+        <li>Automated POI data collection via web scraping to populate the core database for a trip routing app</li>
+        <li>Fixed a data duplication bug in a KAI Android app's trip generation module, ensuring unique itineraries</li>
+        <li>Developed a responsive company profile website from scratch using React, Tailwind CSS, and Node.js</li>
+      </ul>
+      <div class="exp-tags">
+        <span class="tag">PHP</span>
+        <span class="tag">Laravel</span>
+        <span class="tag">React</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">Tailwind CSS</span>
+        <span class="tag">Linux</span>
+        <span class="tag">REST API</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SKILLS
+     ============================================================ -->
+<section id="skills">
+  <div class="section-header">
+    <span class="section-label">Skills</span>
+    <h2 class="section-title">What I work<br>with</h2>
+  </div>
+
+  <div class="skills-grid">
+    <div><!-- empty left column --></div>
+    <div class="skills-categories">
+
+      <div class="skill-group">
+        <p class="skill-group-label">Backend & API</p>
+        <div class="skill-tags">
+          <span class="skill-tag primary">Golang</span>
+          <span class="skill-tag primary">RESTful APIs</span>
+          <span class="skill-tag">PHP (Laravel)</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">JWT Authentication</span>
+          <span class="skill-tag">Web Scraping</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <p class="skill-group-label">Frontend</p>
+        <div class="skill-tags">
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">Tailwind CSS</span>
+          <span class="skill-tag">Vite</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <p class="skill-group-label">Infrastructure & Security</p>
+        <div class="skill-tags">
+          <span class="skill-tag primary">Linux (Ubuntu)</span>
+          <span class="skill-tag">Nginx</span>
+          <span class="skill-tag">Cybersecurity</span>
+          <span class="skill-tag">MitM Mitigation</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <p class="skill-group-label">IT Support & Networking</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Hardware Diagnostics</span>
+          <span class="skill-tag">OS Deployment</span>
+          <span class="skill-tag">Networking Basics</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PROJECTS
+     ============================================================ -->
+<section id="projects">
+  <div class="section-header">
+    <span class="section-label">Projects</span>
+    <h2 class="section-title">Things I've<br>built</h2>
+  </div>
+
+  <!-- Add more .project-card blocks here for additional projects -->
+  <div class="projects-grid">
+    <div class="project-card">
+      <p class="project-num">01 / 02</p>
+      <h3 class="project-title">Kenshi Mod Loader</h3>
+      <p class="project-desc">
+        A cross-platform TUI application that automates Steam Workshop mod
+        discovery and installation. Built a custom web scraper to extract
+        mod metadata directly from Steam community pages.
+      </p>
+      <div class="exp-tags">
+        <span class="tag">Golang</span>
+        <span class="tag">Bubble Tea TUI</span>
+        <span class="tag">SteamCMD</span>
+        <span class="tag">Web Scraping</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <p class="project-num">02 / 02</p>
+      <h3 class="project-title">Terminal Interactive Resume</h3>
+      <p class="project-desc">
+        An interactive web-based terminal emulator using vanilla JavaScript
+        and xterm.js serving as a dynamic portfolio. Implemented CLI tools
+        like <code>cat</code> and <code>ls</code> to replicate a real terminal
+        experience.
+      </p>
+      <div class="exp-tags">
+        <span class="tag">JavaScript</span>
+        <span class="tag">xterm.js</span>
+        <span class="tag">Vite</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     EDUCATION & CERTIFICATIONS
+     ============================================================ -->
+<section id="education">
+  <div class="section-header">
+    <span class="section-label">Education</span>
+    <h2 class="section-title">Background &<br>credentials</h2>
+  </div>
+
+  <div class="edu-grid">
+    <div><!-- empty left column --></div>
+    <div>
+
+      <div class="edu-block">
+        <p class="edu-degree">Bachelor of Informatics Engineering</p>
+        <p class="edu-school">STT Mandala, Bandung · Expected October 2026 · GPA 3.2/4.0</p>
+        <p class="edu-detail">
+          Thesis: "Designing JWT-Based Authentication on Golang APIs for
+          Man-in-the-Middle Mitigation" — researching secure backend
+          authentication to prevent network interception attacks.
+        </p>
+      </div>
+
+      <!-- Add or remove .cert-item rows as needed -->
+      <div class="certs-list">
+        <div class="cert-item">
+          <span class="cert-name">AI Ethics</span>
+          <span class="cert-issuer">IBM · 2026</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-name">Introduction to Generative AI</span>
+          <span class="cert-issuer">IBM · 2026</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-name">Introduction to Artificial Intelligence</span>
+          <span class="cert-issuer">IBM · 2026</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-name">Networking Devices and Initial Configuration</span>
+          <span class="cert-issuer">Cisco · 2026</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-name">Introduction to Cybersecurity</span>
+          <span class="cert-issuer">Cisco · 2026</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-name">AWS Cloud & Generative AI Fundamentals</span>
+          <span class="cert-issuer">Dicoding · 2026</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-name">Spec-Driven Development dengan Kiro</span>
+          <span class="cert-issuer">Dicoding · 2026</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     AMA (Ask Me Anything)
+     ============================================================ -->
+<section id="ama">
+  <div class="section-header">
+    <span class="section-label">AMA</span>
+    <h2 class="section-title">Ask me<br>anything.</h2>
+  </div>
+
+  <!-- Intro row: blurb + big CTA -->
+  <div class="ama-intro">
+    <div><!-- empty left column --></div>
+    <div class="ama-intro-content">
+      <p class="ama-intro-text">
+        Got a question about my stack, projects, or career?
+        Ask away — I'll answer publicly here.
+      </p>
+      <a href="#" class="ama-big-btn" onclick="openAMA(); return false;">
+        Ask a question →
+      </a>
+    </div>
+  </div>
+
+  <!-- Q&A feed — populated by ama.js on load -->
+  <div id="qaFeed">
+    <div class="qa-grid" id="qaGrid">
+
+      <!-- Skeleton placeholders shown while the API call is in-flight -->
+      <div class="qa-placeholder">
+        <div class="ph-line ph-short"></div>
+        <div class="ph-line ph-long"></div>
+        <div class="ph-line ph-med"></div>
+        <div class="ph-divider"></div>
+        <div class="ph-line ph-long"></div>
+        <div class="ph-line ph-med"></div>
+      </div>
+      <div class="qa-placeholder">
+        <div class="ph-line ph-short"></div>
+        <div class="ph-line ph-med"></div>
+        <div class="ph-line ph-long"></div>
+        <div class="ph-divider"></div>
+        <div class="ph-line ph-med"></div>
+        <div class="ph-line ph-short"></div>
+      </div>
+      <div class="qa-placeholder">
+        <div class="ph-line ph-short"></div>
+        <div class="ph-line ph-long"></div>
+        <div class="ph-line ph-short"></div>
+        <div class="ph-divider"></div>
+        <div class="ph-line ph-med"></div>
+        <div class="ph-line ph-long"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <p class="footer-copy">© 2026 Mochammad Tora Sifa</p>
+  <div class="footer-links">
+    <a href="mailto:mochammadtora@gmail.com">Email</a>
+    <a href="https://github.com/squishydal" target="_blank">GitHub</a>
+    <a href="#ama" onclick="openAMA(); return false;">AMA</a>
+  </div>
+</footer>
+
+
+<!-- ============================================================
+     AMA MODAL
+     ============================================================ -->
+<div class="modal-overlay" id="amaModal">
+  <div class="modal">
+    <h3 class="modal-title">Ask me anything</h3>
+    <p class="modal-sub">I'll answer publicly on this page. You can stay anonymous.</p>
+
+    <label class="modal-label">
+      Your name <span class="modal-label-hint">(optional)</span>
+    </label>
+    <input type="text" id="amaName" placeholder="Anonymous" maxlength="50">
+
+    <label class="modal-label">Your question</label>
+    <textarea id="amaText" placeholder="What do you want to ask?" maxlength="500"></textarea>
+    <div class="modal-char-count"><span id="charCount">0</span>/500</div>
+
+    <div class="modal-error"   id="amaError"></div>
+    <div class="modal-success" id="amaSuccess">✓ Question sent! I'll answer it soon.</div>
+
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeAMA()">Cancel</button>
+      <button class="btn-send"   id="sendBtn" onclick="sendAMA()">Send question →</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     SCRIPTS (loaded at end of body so DOM is ready)
+     ============================================================ -->
+<script src="js/theme.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/ama.js"></script>
+
+
+</body>
 </html>

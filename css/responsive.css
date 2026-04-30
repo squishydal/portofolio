@@ -1,0 +1,231 @@
+/* ============================================================
+   RESPONSIVE — mobile-first overrides
+   Breakpoints:  768px (tablet/phone), 420px (small phone)
+   ============================================================ */
+
+
+@media (max-width: 768px) {
+
+  /* ── Nav ──────────────────────────────────────────────── */
+
+  nav {
+    padding: 1rem 1.5rem;
+  }
+
+  /* Hide the desktop link list; hamburger takes over */
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+
+  /* ── Hero ─────────────────────────────────────────────── */
+
+  .hero {
+    padding:    7rem 1.5rem 4rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero h1 {
+    /* Scale the name down on narrow screens without breaking layout */
+    font-size:  clamp(2.8rem, 15vw, 5rem);
+    word-break: break-word;
+    hyphens:    auto;
+  }
+
+  .hero-label {
+    font-size: 10px;
+  }
+
+  .hero-meta {
+    flex-direction: column;
+    gap:            1.5rem;
+    align-items:    center;
+    width:          100%;
+  }
+
+  .hero-desc {
+    text-align: center;
+    max-width:  100%;
+    font-size:  12px;
+  }
+
+  .hero-info {
+    align-items: center;
+    text-align:  center;
+    width:       100%;
+  }
+
+  /* Full-width tap target on mobile */
+  .hero-ama-btn {
+    width:      100%;
+    text-align: center;
+    padding:    0.9rem 1rem;
+  }
+
+  /* Vertical hint doesn't fit on small screens */
+  .hero-scroll {
+    display: none;
+  }
+
+
+  /* ── Sections (shared) ────────────────────────────────── */
+
+  section {
+    padding: 3rem 1.5rem;
+  }
+
+  /* Collapse two-column grids to single column */
+  .section-header,
+  .about-grid,
+  .skills-grid,
+  .edu-grid,
+  .ama-intro {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+
+  /* ── Experience ───────────────────────────────────────── */
+
+  .exp-item {
+    grid-template-columns: 1fr;
+    gap:     0.8rem;
+    padding: 1.8rem 0;
+  }
+
+  .exp-role {
+    font-size: 1.2rem;
+  }
+
+  .exp-bullets {
+    font-size: 12px;
+  }
+
+
+  /* ── Projects ─────────────────────────────────────────── */
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    padding: 1.5rem;
+  }
+
+  .project-title {
+    font-size: 1.2rem;
+  }
+
+
+  /* ── Skills ───────────────────────────────────────────── */
+
+  .skill-tag {
+    font-size: 11px;
+    padding:   0.25rem 0.5rem;
+  }
+
+
+  /* ── Certifications ───────────────────────────────────── */
+
+  /* Stack name and issuer instead of side-by-side */
+  .cert-item {
+    flex-direction: column;
+    align-items:    flex-start;
+    gap:            0.2rem;
+  }
+
+
+  /* ── AMA section ──────────────────────────────────────── */
+
+  .ama-intro-content {
+    flex-direction: column;
+    align-items:    flex-start;
+  }
+
+  .ama-big-btn {
+    width:      100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+
+  /* ── Q&A feed ─────────────────────────────────────────── */
+
+  .qa-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* ── AMA Modal ────────────────────────────────────────── */
+
+  .modal {
+    padding: 1.5rem;
+    width:   94%;
+  }
+
+  .modal-title {
+    font-size: 1.3rem;
+  }
+
+  /* Stack buttons with Send on top (more prominent) */
+  .modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .btn-cancel,
+  .btn-send {
+    width:      100%;
+    text-align: center;
+    padding:    0.75rem;
+  }
+
+
+  /* ── Footer ───────────────────────────────────────────── */
+
+  footer {
+    padding:        1.5rem;
+    flex-direction: column;
+    gap:            1rem;
+    text-align:     center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+
+
+  /* ── About ────────────────────────────────────────────── */
+
+  .about-text {
+    font-size: 0.95rem;
+  }
+
+}
+
+
+/* ── Very small phones (< 420px) ──────────────────────────── */
+
+@media (max-width: 420px) {
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 16vw, 3.5rem);
+  }
+
+  .project-card {
+    padding: 1.2rem;
+  }
+
+  section {
+    padding: 2.5rem 1.2rem;
+  }
+
+}

@@ -1,0 +1,57 @@
+/* ============================================================
+   BASE — variables, reset, body, dark-mode transitions
+   ============================================================ */
+
+
+/* ── Colour tokens ────────────────────────────────────────── */
+
+:root {
+  --black:  #0a0a0a;
+  --white:  #f7f5f0;
+  --gray:   #888;
+  --border: #d0cec8;
+}
+
+/* Swap every token when dark mode is active */
+[data-theme="dark"] {
+  --black:  #f0ede6;
+  --white:  #0f0f0d;
+  --gray:   #777;
+  --border: #2a2a26;
+}
+
+
+/* ── Reset ────────────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* ── Body ─────────────────────────────────────────────────── */
+
+body {
+  background:   var(--white);
+  color:        var(--black);
+  font-family:  'Space Mono', monospace;
+  font-size:    14px;
+  line-height:  1.7;
+  overflow-x:   hidden;
+  transition:   background 0.4s ease, color 0.4s ease;
+}
+
+
+/* ── Smooth theme transition on every major element ───────── */
+/* Keeps the dark/light switch from feeling abrupt            */
+
+nav, section, footer,
+.hero, .project-card, .modal,
+.exp-item, .skill-tag, .tag, .cert-item {
+  transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}

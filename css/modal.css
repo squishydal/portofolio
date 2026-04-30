@@ -1,0 +1,163 @@
+/* ============================================================
+   MODAL — AMA overlay, form inputs, action buttons
+   ============================================================ */
+
+
+/* ── Full-screen dimmed backdrop ──────────────────────────── */
+
+.modal-overlay {
+  display:         none; /* JS adds .active to show it */
+  position:        fixed;
+  inset:           0;
+  background:      rgba(10, 10, 10, 0.7);
+  z-index:         999;
+  align-items:     center;
+  justify-content: center;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+
+/* ── Modal card ───────────────────────────────────────────── */
+
+.modal {
+  background: var(--white);
+  border:     1px solid var(--black);
+  padding:    2.5rem;
+  width:      90%;
+  max-width:  480px;
+  animation:  slide-up 0.2s ease;
+}
+
+@keyframes slide-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.modal-title {
+  font-family:   'Playfair Display', serif;
+  font-size:     1.6rem;
+  font-weight:   700;
+  margin-bottom: 0.5rem;
+}
+
+.modal-sub {
+  font-size:     12px;
+  color:         var(--gray);
+  margin-bottom: 1.5rem;
+}
+
+
+/* ── Form field labels ────────────────────────────────────── */
+
+.modal-label {
+  display:        block;
+  font-size:      10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color:          var(--gray);
+  margin-bottom:  0.4rem;
+}
+
+.modal-label-hint {
+  color:       var(--gray);
+  font-weight: 400;
+}
+
+
+/* ── Text inputs and textareas ────────────────────────────── */
+
+.modal input[type="text"],
+.modal textarea {
+  width:       100%;
+  border:      1px solid var(--border);
+  background:  transparent;
+  font-family: 'Space Mono', monospace;
+  font-size:   13px;
+  color:       var(--black);
+  outline:     none;
+  transition:  border-color 0.2s;
+}
+
+.modal input[type="text"] {
+  padding:       0.7rem;
+  margin-bottom: 1rem;
+}
+
+.modal textarea {
+  height:  120px;
+  padding: 0.8rem;
+  resize:  none;
+}
+
+.modal input[type="text"]:focus,
+.modal textarea:focus {
+  border-color: var(--black);
+}
+
+/* Character counter below the textarea */
+.modal-char-count {
+  text-align: right;
+  font-size:  10px;
+  color:      var(--gray);
+  margin-top: 0.3rem;
+}
+
+/* Inline feedback messages */
+.modal-error {
+  display:    none;
+  font-size:  11px;
+  color:      #c1121f;
+  margin-top: 0.5rem;
+}
+
+.modal-success {
+  display:    none;
+  font-size:  11px;
+  color:      #2d6a4f;
+  margin-top: 0.5rem;
+}
+
+
+/* ── Cancel / Send buttons ────────────────────────────────── */
+
+.modal-actions {
+  display:         flex;
+  gap:             1rem;
+  margin-top:      1rem;
+  justify-content: flex-end;
+}
+
+.btn-cancel {
+  background:  none;
+  border:      1px solid var(--border);
+  padding:     0.6rem 1.2rem;
+  font-family: 'Space Mono', monospace;
+  font-size:   12px;
+  cursor:      pointer;
+  color:       var(--gray);
+  transition:  border-color 0.2s, color 0.2s;
+}
+
+.btn-cancel:hover {
+  border-color: var(--black);
+  color:        var(--black);
+}
+
+.btn-send {
+  background:  var(--black);
+  color:       var(--white);
+  border:      1px solid var(--black);
+  padding:     0.6rem 1.5rem;
+  font-family: 'Space Mono', monospace;
+  font-size:   12px;
+  cursor:      pointer;
+  transition:  background 0.2s, color 0.2s;
+}
+
+.btn-send:hover {
+  background: var(--white);
+  color:      var(--black);
+}

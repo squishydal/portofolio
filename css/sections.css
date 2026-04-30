@@ -1,0 +1,475 @@
+/* ============================================================
+   SECTIONS — shared layout + every content section
+   ============================================================ */
+
+
+/* ── Shared section wrapper ───────────────────────────────── */
+
+section {
+  padding:       5rem 4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+
+/* ── Section header (used in Experience, Skills, Projects…) ─ */
+/* Two-column grid: narrow label on the left, title on the right */
+
+.section-header {
+  display:               grid;
+  grid-template-columns: 160px 1fr;
+  gap:                   3rem;
+  align-items:           start;
+  margin-bottom:         3rem;
+}
+
+.section-label {
+  font-size:      11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color:          var(--gray);
+  padding-top:    0.3rem;
+}
+
+.section-title {
+  font-family:    'Playfair Display', serif;
+  font-size:      2.8rem;
+  font-weight:    700;
+  line-height:    1.1;
+  letter-spacing: -0.02em;
+}
+
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+
+/* Same two-column grid as .section-header */
+.about-grid {
+  display:               grid;
+  grid-template-columns: 160px 1fr;
+  gap:                   3rem;
+}
+
+.about-text {
+  font-size:   1.05rem;
+  line-height: 1.8;
+  font-family: 'Space Mono', monospace;
+  font-weight: 400;
+}
+
+.about-text strong {
+  color:       var(--black);
+  font-weight: 700;
+}
+
+
+/* ============================================================
+   EXPERIENCE
+   ============================================================ */
+
+/* Each job is its own two-column row */
+.exp-item {
+  display:               grid;
+  grid-template-columns: 160px 1fr;
+  gap:                   3rem;
+  padding:               2.5rem 0;
+  border-top:            1px solid var(--border);
+}
+
+.exp-item:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.exp-meta {
+  display:        flex;
+  flex-direction: column;
+  gap:            0.3rem;
+}
+
+.exp-date {
+  font-size:      11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color:          var(--gray);
+}
+
+.exp-company {
+  font-weight: 700;
+  font-size:   13px;
+}
+
+.exp-location {
+  font-size: 11px;
+  color:     var(--gray);
+}
+
+.exp-role {
+  font-family:   'Playfair Display', serif;
+  font-size:     1.4rem;
+  font-weight:   700;
+  margin-bottom: 1rem;
+}
+
+.exp-bullets {
+  list-style:     none;
+  display:        flex;
+  flex-direction: column;
+  gap:            0.5rem;
+  color:          #444;
+  font-size:      13px;
+}
+
+.exp-bullets li::before {
+  content: '— ';
+  color:   var(--gray);
+}
+
+/* Tag row shared by experience AND projects */
+.exp-tags {
+  display:    flex;
+  flex-wrap:  wrap;
+  gap:        0.5rem;
+  margin-top: 1.2rem;
+}
+
+.tag {
+  font-size:      10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding:        0.25rem 0.6rem;
+  border:         1px solid var(--border);
+  color:          var(--gray);
+}
+
+
+/* ============================================================
+   SKILLS
+   ============================================================ */
+
+.skills-grid {
+  display:               grid;
+  grid-template-columns: 160px 1fr;
+  gap:                   3rem;
+}
+
+.skills-categories {
+  display:        flex;
+  flex-direction: column;
+  gap:            2rem;
+}
+
+.skill-group-label {
+  font-size:      11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color:          var(--gray);
+  margin-bottom:  0.8rem;
+  border-bottom:  1px solid var(--border);
+  padding-bottom: 0.4rem;
+}
+
+.skill-tags {
+  display:   flex;
+  flex-wrap: wrap;
+  gap:       0.5rem;
+}
+
+.skill-tag {
+  font-size: 12px;
+  padding:   0.3rem 0.7rem;
+  border:    1px solid var(--black);
+  color:     var(--black);
+}
+
+/* Filled variant for primary/featured skills */
+.skill-tag.primary {
+  background: var(--black);
+  color:      var(--white);
+}
+
+
+/* ============================================================
+   PROJECTS
+   ============================================================ */
+
+/* Two equal columns with hairline gaps between cards */
+.projects-grid {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+  gap:                   2px;
+  border:                1px solid var(--border);
+}
+
+.project-card {
+  padding:    2.5rem;
+  border:     1px solid var(--border);
+  position:   relative;
+  transition: background 0.2s;
+}
+
+/* Invert colours on hover for a punchy effect */
+.project-card:hover                { background:  var(--black); color: var(--white); }
+.project-card:hover .project-desc  { color: #aaa; }
+.project-card:hover .tag           { border-color: #444; color: #aaa; }
+.project-card:hover .project-num   { color: #444; }
+
+.project-num {
+  font-size:     11px;
+  letter-spacing: 0.1em;
+  color:         var(--gray);
+  margin-bottom: 1rem;
+}
+
+.project-title {
+  font-family:   'Playfair Display', serif;
+  font-size:     1.5rem;
+  font-weight:   700;
+  margin-bottom: 0.8rem;
+  line-height:   1.2;
+}
+
+.project-desc {
+  font-size:     12px;
+  color:         #555;
+  line-height:   1.7;
+  margin-bottom: 1.2rem;
+}
+
+
+/* ============================================================
+   EDUCATION & CERTIFICATIONS
+   ============================================================ */
+
+.edu-grid {
+  display:               grid;
+  grid-template-columns: 160px 1fr;
+  gap:                   3rem;
+}
+
+.edu-block {
+  margin-bottom: 2.5rem;
+}
+
+.edu-degree {
+  font-family:   'Playfair Display', serif;
+  font-size:     1.2rem;
+  font-weight:   700;
+  margin-bottom: 0.3rem;
+}
+
+.edu-school {
+  color:         var(--gray);
+  font-size:     12px;
+  margin-bottom: 0.3rem;
+}
+
+.edu-detail {
+  font-size:   12px;
+  color:       #555;
+  line-height: 1.7;
+}
+
+/* Certifications list */
+.certs-list {
+  display:        flex;
+  flex-direction: column;
+}
+
+.cert-item {
+  display:         flex;
+  justify-content: space-between;
+  align-items:     center;
+  padding:         0.8rem 0;
+  border-bottom:   1px solid var(--border);
+  font-size:       12px;
+}
+
+.cert-name   { color: var(--black); }
+.cert-issuer { color: var(--gray);  }
+
+
+/* ============================================================
+   AMA (Ask Me Anything) SECTION
+   ============================================================ */
+
+/* Intro row: description + big CTA button */
+.ama-intro {
+  display:               grid;
+  grid-template-columns: 160px 1fr;
+  gap:                   3rem;
+  margin-bottom:         3rem;
+}
+
+.ama-intro-content {
+  display:     flex;
+  align-items: center;
+  gap:         2rem;
+  flex-wrap:   wrap;
+}
+
+.ama-intro-text {
+  color:     var(--gray);
+  font-size: 13px;
+  max-width: 400px;
+}
+
+/* Big "Ask a question →" button */
+.ama-big-btn {
+  display:         inline-flex;
+  align-items:     center;
+  gap:             0.8rem;
+  background:      var(--black);
+  color:           var(--white);
+  text-decoration: none;
+  padding:         1.2rem 2.5rem;
+  font-family:     'Space Mono', monospace;
+  font-size:       13px;
+  letter-spacing:  0.08em;
+  border:          1px solid var(--black);
+  transition:      background 0.4s ease, color 0.4s ease;
+  width:           fit-content;
+}
+
+.ama-big-btn:hover {
+  background: var(--white);
+  color:      var(--black);
+}
+
+
+/* ── Q&A feed grid ────────────────────────────────────────── */
+
+/* Three columns; the 1px background colour creates hairline dividers */
+.qa-grid {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   1px;
+  background:            var(--border);
+  border:                1px solid var(--border);
+}
+
+.qa-card {
+  background:     var(--white);
+  padding:        1.8rem;
+  display:        flex;
+  flex-direction: column;
+  gap:            1rem;
+  transition:     background 0.2s;
+}
+
+.qa-card:hover                        { background: #f0ede5; }
+[data-theme="dark"] .qa-card:hover    { background: #1a1a16; }
+
+.qa-asker {
+  font-size:      10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color:          var(--gray);
+}
+
+.qa-asker strong { color: var(--black); }
+
+.qa-question {
+  font-family: 'Playfair Display', serif;
+  font-size:   1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color:       var(--black);
+}
+
+.qa-divider {
+  height:     1px;
+  background: var(--border);
+}
+
+.qa-answer-label {
+  font-size:      10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color:          var(--gray);
+  margin-bottom:  0.3rem;
+}
+
+.qa-answer {
+  font-size:   12px;
+  color:       var(--gray);
+  line-height: 1.7;
+}
+
+.qa-date {
+  font-size:  10px;
+  color:      var(--border);
+  margin-top: auto; /* pushes date to the bottom of the card */
+}
+
+.qa-empty {
+  grid-column: 1 / -1; /* spans all 3 columns */
+  padding:     3rem;
+  text-align:  center;
+  color:       var(--gray);
+  font-size:   12px;
+  background:  var(--white);
+}
+
+
+/* ── Skeleton / shimmer placeholders (shown while feed loads) */
+
+.qa-placeholder {
+  background:     var(--white);
+  padding:        1.8rem;
+  display:        flex;
+  flex-direction: column;
+  gap:            0.7rem;
+}
+
+.ph-line {
+  height:          10px;
+  border-radius:   2px;
+  background:      linear-gradient(90deg, var(--border) 25%, #e8e5df 50%, var(--border) 75%);
+  background-size: 200% 100%;
+  animation:       shimmer 1.5s infinite;
+}
+
+.ph-short   { width: 35%; }
+.ph-med     { width: 65%; }
+.ph-long    { width: 90%; }
+.ph-divider { height: 1px; background: var(--border); margin: 0.3rem 0; }
+
+@keyframes shimmer {
+  0%   { background-position:  200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+footer {
+  padding:         2rem 4rem;
+  display:         flex;
+  justify-content: space-between;
+  align-items:     center;
+}
+
+.footer-copy {
+  font-size: 11px;
+  color:     var(--gray);
+}
+
+.footer-links {
+  display: flex;
+  gap:     2rem;
+}
+
+.footer-links a {
+  font-size:       11px;
+  color:           var(--gray);
+  text-decoration: none;
+  letter-spacing:  0.08em;
+  text-transform:  uppercase;
+  transition:      color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--black);
+}
